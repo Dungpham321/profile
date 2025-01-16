@@ -126,7 +126,7 @@ section{
 .main-container .image{
     width: 500px;
     height: 500px;
-    border-radius: 100%;
+    border-radius: 10%;
     overflow: hidden;
     box-shadow: 0 0 50px #077b32;
 }
@@ -135,21 +135,21 @@ section{
     width: 100%;
 }
 
-.main-container .image:hover{
-    animation: animate 1.5s ease-in-out infinite;
+.main-container .image {
+    animation: animate 3s infinite;
 }
 
 @keyframes animate {
     0%{
-        scale: 1;
+        box-shadow: 0 0 50px #077b32;
     }
     
     50%{
-        scale: 1.05;
+        box-shadow: 0 0 50px #f50e25;/* Hoặc bạn có thể chọn màu khác */
     }
     
     100%{
-        scale: 1;
+        box-shadow: 0 0 50px #ff0cb6;
     }
 }
 
@@ -206,9 +206,6 @@ section{
 }
 
 .content button{
-    width: 50%;
-    height: 6vh;
-    margin: 30px;
     background-color: #077b32;
     color: white;
     border: none;
@@ -262,6 +259,7 @@ audio { margin-top: 20px; }
     }
 
     .main-container .content{
+        margin-top: 20px;
         width: 80%;
     }
 
@@ -286,6 +284,7 @@ audio { margin-top: 20px; }
     }
 
     .main-container .content{
+        margin-top: 20px;
         width: 80%;
     }
 
@@ -297,12 +296,7 @@ audio { margin-top: 20px; }
 .rotate { 
     display: block; 
     margin: 0 auto; 
-    width: 100%; /* Điều chỉnh kích thước ảnh nếu cần */ 
-    height: 100%; /* Điều chỉnh kích thước ảnh nếu cần */ 
-    border-radius: 100%; /* Làm cho ảnh có dạng tròn */ 
-    animation: spin 6s linear infinite; /* Điều chỉnh thời gian xoay nếu cần */
-}
-@keyframes spin { 
-    from { transform: rotate(0deg); } 
-    to { transform: rotate(360deg); } 
+    max-width: 100%; 
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
 }

@@ -40,7 +40,7 @@
                 <img src="/Images/avata.jpg" alt="Ảnh cá nhân" class="rotate">
             </div>
             <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Xin chào! Tôi là <span>Phạm Văn Dũng</span></h1>
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Xin chào! Tôi là <button  id="playButton">Phạm Văn Dũng</button></h1>
                 <!-- <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for="">|</label></div> -->
                 <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Xin chào, tôi là Phạm Văn Dũng, 24 tuổi, sinh ra và lớn lên ở Hà Tĩnh. Tôi luôn tìm kiếm những khoảnh khắc thư giãn và vui vẻ trong cuộc sống hàng ngày. Hai sở thích lớn của tôi là ngủ và ca hát. Đối với tôi, một giấc ngủ ngon giúp tái tạo năng lượng cho cơ thể, còn ca hát cho phép tôi thể hiện cảm xúc và kết nối với những người xung quanh.</p>
                 <div class="social-links">
@@ -49,15 +49,30 @@
                     <a href="https://www.instagram.com/dungvanpham387/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@dungpv" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
-                <audio class="audio-player"  controls autoplay> 
+                <!-- <audio class="audio-player"  controls autoplay data-aos="zoom-out"  data-aos-duration="1500" data-aos-delay="700"> 
                   <source src="./Images/Nang-Cu_new.mp3" type="audio/mpeg"> Trình duyệt của bạn không hỗ trợ thẻ audio. 
-                </audio>
+                </audio> -->
+
+                <audio id="myAudio" src="./Images/Nang-Cu_new.mp3"></audio>
             </div>
         </div>
     </section>  
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({offset:0});
+      document.addEventListener('DOMContentLoaded', function() { 
+            var audio = document.getElementById('myAudio'); 
+            var playButton = document.getElementById('playButton'); 
+            playButton.addEventListener('click', function() { 
+                audio.play().catch(function(error) { 
+                 console.error('Error:', error); 
+                }); 
+            })
+           
+            
+        });
+
+
     </script>
     <script src="/Js/main.js"></script>
 </body>
